@@ -1,0 +1,19 @@
+h1.admin Должности
+
+.menu
+  = link_to 'Новыя запись', new_position_path
+  = link_to 'Перейти на персонал', users_path
+  = link_to 'Перейти на главную', home_index_path
+
+table.admin
+  tr
+    th Должность
+
+  - @positions.each do |position|
+    tr
+      td
+        = position.name
+      td
+        = link_to 'Edit', edit_position_path(position)
+      td
+        = link_to 'Destroy', position_path(position), method: :delete, data: { confirm: 'Вы уверены?' }

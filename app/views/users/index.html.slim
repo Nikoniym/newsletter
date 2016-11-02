@@ -1,0 +1,26 @@
+h1.admin Персонал
+.menu
+  = link_to 'Новыя запись', new_user_path
+  = link_to 'Перейти на должность', positions_path
+  = link_to 'Перейти на главную', home_index_path
+
+table.admin
+  tr
+    th Avatar
+    th Name
+    th description
+
+
+  - @users.each do |user|
+    tr
+      td
+        = image_tag user.avatar.url(:thumb)
+      td
+        = user.name
+      td
+        = user.description
+
+      td
+        = link_to 'Edit', edit_user_path(user)
+      td
+        = link_to 'Destroy', user_path(user), method: :delete, data: { confirm: 'Вы уверены?' }
