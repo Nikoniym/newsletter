@@ -5,9 +5,9 @@
       -@users.each do |user|
         .item
           = image_tag user.avatar.url(:medium)
-          strong = user.name
-          p = user.position.name
-          p = user.description
+          p.strong = user.name
+          p.italic = user.position.name
+          p.text = user.description
   = link_to 'Перейти на персонал', users_path
   = link_to 'Перейти на должность', positions_path
 
