@@ -14,7 +14,7 @@ table.admin
   - @users.each do |user|
     tr
       td
-        = image_tag user.avatar.url
+        = image_tag user.avatar(:thumb)
       td
         = user.name
       td
@@ -22,5 +22,9 @@ table.admin
 
       td
         = link_to 'Edit', edit_user_path(user)
+      td
+        = link_to 'Edit', edit_user_path(user)
+      td
+        = link_to 'Crop', crop_user_path(user), :remote => true, :method => :post
       td
         = link_to 'Destroy', user_path(user), method: :delete, data: { confirm: 'Вы уверены?' }

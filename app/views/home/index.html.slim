@@ -2,9 +2,20 @@
   .team
     h2 Наша команда
     .staff
-      -@users.each do |user|
+      .owl-carousel
+        - @users.each do |user|
+          .item
+            -if user.avatar_file_name
+              = image_tag user.avatar.url(:medium)
+            p.strong = user.name
+            p.italic = user.position.name
+            p.text = user.description
+  .team
+    .staff.second
+       - @users.each do |user|
         .item
-          = image_tag user.avatar.url(:medium)
+          - if user.avatar_file_name
+            = image_tag user.avatar.url(:medium)
           p.strong = user.name
           p.italic = user.position.name
           p.text = user.description

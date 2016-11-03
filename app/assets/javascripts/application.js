@@ -15,4 +15,5 @@
 //= require jquery.jcrop
 //= require papercrop
 //= require turbolinks
+//= require owl.carousel
 //= require_tree .

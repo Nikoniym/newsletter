@@ -1,5 +1,8 @@
+@import 'susy'
+
+
 .wrapper
-  width: 900px
+  max-width: 900px
   margin: 0 auto
   .team
     width: 100%
@@ -15,46 +18,59 @@
       margin-bottom: 55px
 
     .staff
-      width: 600px
+      max-width: 600px
       height: 260px
       margin: 0 auto
+  .team:nth-child(2)
+    height: auto
+    overflow: hidden
+    margin-top: 150px
 
-      .item
-        width: 30%
-        height: 100%
-        margin-right: 5%
-        border-radius: 5px
-        background: #ffffff
-        float: left
-        &:last-child
-          margin-right: 0
-        img
-          display: block
-          width: 73px
-          margin: 0 auto
-          border-radius: 50%
-          margin-top: 30px
-        .strong
-          text-align: center
-          margin-top: 20px
-          font-weight: bold
-          color: black
-          font-size: 16px
-        .italic
-          text-align: center
-          color: #75bec0
-          margin-top: 2px
-          font-style: italic
-          font-size: 12px
-        .text
-          text-align: center
-          margin-top: 12px
-          padding: 0 16px
-          font-size: 14px
-          color: #949494
-          line-height: 1.4
+.item
+  text-align: center
+  width: 180px
+  margin: 0 auto
+  height: 230px
+  padding-top: 30px
+  border-radius: 5px
+  background: #ffffff
+  //float: left
+  margin-bottom: 20px
 
+  img
+    display: block
+    width: 73px
+    margin: 0 auto
+    border-radius: 50%
 
+  .strong
+    text-align: center
+    margin-top: 20px
+    font-weight: 500
+    color: black
+    font-size: 16px
+  .italic
+    text-align: center
+    color: #75bec0
+    margin-top: 2px
+    font-style: italic
+    font-size: 12px
+  .text
+    text-align: center
+    margin-top: 12px
+    padding: 0 16px
+    font-size: 14px
+    color: #949494
+    line-height: 1.4
+
+.second
+  padding-top: 50px
+  .item
+    float: left
+    margin-right: 5%
+    //width: 30%
+    &:nth-child(3n)
+      margin-right: 0
 
 h1.admin
   text-align: center
@@ -86,3 +102,24 @@ table.admin
   margin-top: 50px
   border: 2px solid black
   text-align: center
+@media screen and (max-width: 650px)
+  .wrapper .team  .second
+    .item
+      margin-right: 10%
+      margin-left: 10%
+      &:nth-child(2n)
+        margin-right: 0
+        margin-left: 4%
+    height: auto
+@media screen and (max-width: 480px)
+  .wrapper .team .second
+    .item
+      float: none
+      margin: 0 auto
+      margin-top: 30px
+      &:first-child
+        margin-top: 0px
+      &:nth-child(2n)
+        margin-right: auto
+        margin-left: auto
+    height: auto
