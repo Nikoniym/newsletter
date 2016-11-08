@@ -18,3 +18,16 @@
 
 # Ignore Byebug command history file.
 .byebug_history
+/app/models/customer.rb
+Будет удалено .idea/dataSources.local.xml
+Будет удалено .idea/dataSources.xml
+Будет удалено .idea/dataSources/
+Будет удалено app/admin/
+Будет удалено app/models/customer.rb
+Будет удалено public/system/customers/
+Будет удалено public/system/users/avatars/000/000/009/
+Будет удалено public/system/users/avatars/000/000/010/
+Будет удалено public/system/users/avatars/000/000/012/
+Будет удалено public/system/users/avatars/000/000/014/
+Будет удалено test/fixtures/customers.yml
+Будет удалено test/models/customer_test.rb

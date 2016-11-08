@@ -1,0 +1,30 @@
+h1.admin Персонал
+.menu
+  = link_to 'Новыя запись', new_customer_path
+  = link_to 'Перейти на должность', positions_path
+  = link_to 'Перейти на главную', home_index_path
+
+table.admin
+  tr
+    th Avatar
+    th Name
+    th description
+
+
+  - @customers.each do |customer|
+    tr
+      td
+        = image_tag customer.avatar(:thumb)
+      td
+        = customer.name
+      td
+        = customer.description
+
+      td
+        = link_to 'Edit', edit_customer_path(customer)
+      td
+        = link_to 'Edit', edit_customer_path(customer)
+      td
+        = link_to 'Crop', crop_customer_path(customer), :remote => true, :method => :post
+      td
+        = link_to 'Destroy', customer_path(customer), method: :delete, data: { confirm: 'Вы уверены?' }

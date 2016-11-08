@@ -1,0 +1,11 @@
+.wrap
+  p
+    strong Name:
+    = @customer.name
+  p
+    strong Date:
+    = @customer.description
+  p
+    strong Avatar:
+    = image_tag @customer.avatar.url(:medium)
+  = link_to 'Back', customers_path
