@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  resources :users do
-    post 'crop', :on => :member
-  end
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+  devise_for :users
+
   resources :customers do
     post 'crop', :on => :member
   end

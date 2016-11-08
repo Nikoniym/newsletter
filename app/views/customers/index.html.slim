@@ -1,3 +1,7 @@
+- if user_signed_in?
+  = link_to 'Выйти', destroy_user_session_path, method: :delete, data: {confirm: 'Точно хотите выйти?'}
+- else
+  = link_to 'Войти', new_user_session_path
 h1.admin Персонал
 .menu
   = link_to 'Новыя запись', new_customer_path

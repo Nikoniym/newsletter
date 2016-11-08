@@ -59,9 +59,18 @@ gem 'susy'
 
 gem 'owlcarousel-rails'
 
-gem 'compass-rails', '~> 2.0.alpha.0'
+gem 'compass-rails', '~> 3.0', '>= 3.0.2'
 
 gem 'breakpoint'
 
 gem 'sass-rails', '~> 5.0.0'
+
+gem 'devise'
+
+gem 'cancan'
+
+gem 'inherited_resources', github: 'activeadmin/inherited_resources'
+
+gem 'activeadmin', '~> 1.0.0.pre4'
+
 
