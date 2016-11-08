@@ -59,6 +59,9 @@ gem 'susy'
 
 gem 'owlcarousel-rails'
 
-gem 'compass-rails', '~> 2.0.0'
+gem 'compass-rails'
+
+gem 'breakpoint'
 
 gem 'sass-rails', '~> 5.0.0'
+
