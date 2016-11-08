@@ -59,7 +59,7 @@ gem 'susy'
 
 gem 'owlcarousel-rails'
 
-gem 'compass-rails'
+gem 'compass-rails', '~> 2.0.alpha.0'
 
 gem 'breakpoint'
 

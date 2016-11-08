@@ -31,3 +31,5 @@
 Будет удалено public/system/users/avatars/000/000/014/
 Будет удалено test/fixtures/customers.yml
 Будет удалено test/models/customer_test.rb
+/db/migrate/20161108145324_drop_users.rb
+
