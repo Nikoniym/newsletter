@@ -9,6 +9,8 @@ h1.admin Персонал
   = link_to 'Перейти на главную', home_index_path
 
 table.admin
+  /= javascript_include_tag :ckeditor
+  /= cktext_area_tag(:input_html => {:cols => 10, :rows => 20}, :toolbar => 'Easy')
   tr
     th Avatar
     th Name

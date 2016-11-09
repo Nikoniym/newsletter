@@ -1,26 +1,30 @@
 .wrapper
+  = javascript_include_tag :ckeditor
+  = cktext_area_tag(:input_html => {:cols => 10, :rows => 20}, :toolbar => 'Easy')
   .team
-    h2 Наша команда
-    .staff
-      .owl-carousel
+    .container
+      h2 Наша команда
+      .staff
+        .owl-carousel
+          - @users.each do |user|
+            .item
+              -if user.avatar_file_name
+                = image_tag user.avatar.url(:medium)
+              p.strong = user.name
+              p.italic = user.position.name
+              p.text = user.description
+  .team
+    .container
+      .staff2
         - @users.each do |user|
           .item
-            -if user.avatar_file_name
+            - if user.avatar_file_name
               = image_tag user.avatar.url(:medium)
             p.strong = user.name
             p.italic = user.position.name
             p.text = user.description
-  .team
-    .staff2
-       - @users.each do |user|
-        .item
-          - if user.avatar_file_name
-            = image_tag user.avatar.url(:medium)
-          p.strong = user.name
-          p.italic = user.position.name
-          p.text = user.description
-  = link_to 'Перейти на персонал', customers_path
-  = link_to 'Перейти на должность', positions_path
+    = link_to 'Перейти на персонал', customers_path
+    = link_to 'Перейти на должность', positions_path
 
 
 

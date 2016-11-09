@@ -4,4 +4,6 @@ class Customer < ApplicationRecord
   crop_attached_file :avatar
 
   belongs_to :position
+
+
 end
