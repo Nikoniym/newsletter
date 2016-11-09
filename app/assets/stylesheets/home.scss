@@ -28,9 +28,11 @@ $susy: (
     margin-bottom: 55px;
   }
   .staff {
+
     max-width: 600px;
-    height: 460px;
     margin: 0 auto;
+    height: 460px;
+
   }
 
   .team:nth-child(2){
@@ -87,7 +89,7 @@ $susy: (
   .item {
     //&:nth-child(3n-2) {@include span(2  at 4 of 12 isolate);}
     //&:nth-child(3n-1) {@include span(2  at 6 of 12 isolate);}
-    //&:nth-child(3n) {@include span(2  at 8 of 12 isolate);}
+    //&:nth-child(3n) {@include span(2  at 8 of 12 isolate );}
 
     @include span(1 of 3);
 

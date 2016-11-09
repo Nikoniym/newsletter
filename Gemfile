@@ -73,4 +73,3 @@ gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 
 gem 'activeadmin', '~> 1.0.0.pre4'
 
-
