@@ -12,9 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery.jcrop
-//= require papercrop
-//= require turbolinks
 //= require owl.carousel
 //= require ckeditor/init
 //= require_tree .

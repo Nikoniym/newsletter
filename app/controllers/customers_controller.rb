@@ -21,6 +21,12 @@ class CustomersController < ApplicationController
     @customer = Customer.new(customer_params)
 
     if @customer.save
+      if params[:customer][:avatar].blank?
+        flash[:notice] = "Successfully updated customer."
+        redirect_to @customer
+      else
+        render :action => "crop"
+      end
       redirect_to  customers_path
     else
       render :new
@@ -32,6 +38,12 @@ class CustomersController < ApplicationController
 
   def update
     if @customer.update(customer_params)
+      if params[:customer][:avatar].blank?
+        flash[:notice] = "Successfully updated customer."
+        redirect_to @customer
+      else
+        render :action => "crop"
+      end
       redirect_to customers_path
     else
       render :edit
