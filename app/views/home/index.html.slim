@@ -1,6 +1,4 @@
 .wrapper
-  = javascript_include_tag :ckeditor
-  = cktext_area_tag(:input_html => {:cols => 10, :rows => 20}, :toolbar => 'Easy')
   .team
     .container
       h2 Наша команда
@@ -12,7 +10,7 @@
                 = image_tag user.avatar.url(:medium)
               p.strong = user.name
               p.italic = user.position.name
-              p.text = user.description
+              p.text = user.description.html_safe
   .team
     .container
       .staff2
@@ -22,7 +20,7 @@
               = image_tag user.avatar.url(:medium)
             p.strong = user.name
             p.italic = user.position.name
-            p.text = user.description
+            p.text  =user.description.html_safe
     = link_to 'Перейти на персонал', customers_path
     = link_to 'Перейти на должность', positions_path
 
