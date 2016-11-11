@@ -1,4 +1,5 @@
 - if user_signed_in?
+  = current_user.email
   = link_to 'Выйти', destroy_user_session_path, method: :delete, data: {confirm: 'Точно хотите выйти?'}
 - else
   = link_to 'Войти', new_user_session_path
@@ -25,12 +26,11 @@ table.admin
         = customer.name
       td
         = customer.description
-
-      td
-        = link_to 'Edit', edit_customer_path(customer)
-      td
-        = link_to 'Edit', edit_customer_path(customer)
-      td
-        = link_to 'Crop', crop_customer_path(customer), :remote => true, :method => :post
-      td
-        = link_to 'Destroy', customer_path(customer), method: :delete, data: { confirm: 'Вы уверены?' }
+      - if can? :update, customer
+        td
+          = link_to 'Edit', edit_customer_path(customer)
+        td
+          = link_to 'Crop', crop_customer_path(customer), :remote => true, :method => :post
+      - if can? :destroy, customer
+        td
+          = link_to 'Destroy', customer_path(customer), method: :delete, data: { confirm: 'Вы уверены?' }

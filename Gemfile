@@ -67,7 +67,9 @@ gem 'sass-rails', '~> 5.0.0'
 
 gem 'devise'
 
-gem 'cancan'
+gem 'cancancan', '~> 1.10'
+
+gem 'rolify'
 
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 

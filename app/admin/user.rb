@@ -1,5 +1,5 @@
 ActiveAdmin.register User do
-  index do
+  index do |f|
     column 'Avatar' do |user|
       image_tag(user.avatar(:thumb))
     end
@@ -10,7 +10,9 @@ ActiveAdmin.register User do
     column :email
     column :encrypted_password
     column :position_id
-    actions
+    if can? :all, f
+      actions
+    end
   end
   permit_params :avatar, :name, :description, :position_id, :avatar_crop_x, :avatar_crop_y, :avatar_crop_w, :avatar_crop_h, :email
 

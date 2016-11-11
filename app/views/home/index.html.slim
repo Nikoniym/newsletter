@@ -1,7 +1,13 @@
 .wrapper
+
   .team
     .container
       h2 Наша команда
+      - if user_signed_in?
+        span = current_user.email
+        = link_to 'Выйти', destroy_user_session_path, method: :delete, data: {confirm: 'Точно хотите выйти?'}
+      - else
+        = link_to 'Войти', new_user_session_path
       .staff
         .owl-carousel
           - @users.each do |user|
@@ -9,8 +15,10 @@
               -if user.avatar_file_name
                 = image_tag user.avatar.url(:medium)
               p.strong = user.name
-              p.italic = user.position.name
-              p.text = user.description.html_safe
+              p.italic
+                - if  user.position_id?
+                  = user.position.name
+              p.text == user.description
   .team
     .container
       .staff2
@@ -19,8 +27,8 @@
             - if user.avatar_file_name
               = image_tag user.avatar.url(:medium)
             p.strong = user.name
-            p.italic = user.position.name
-            p.text  =user.description.html_safe
+            p.italic  = user.position.name if  user.position_id?
+            p.text  == user.description
     = link_to 'Перейти на персонал', customers_path
     = link_to 'Перейти на должность', positions_path
 

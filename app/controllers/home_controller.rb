@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
-
+  before_action :authenticate_user!
   def index
-    @users=Customer.all
+    @users=User.all
   end
 
 end
